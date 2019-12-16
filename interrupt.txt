@@ -1,0 +1,48 @@
+#define Motor1A 1
+#define Motor1B 2
+#define Enable 0
+#define Interrupter 3
+
+int interrupt, start, val;
+void setup() {
+  // put your setup code here, to run once:
+  pinMode (Motor1A, OUTPUT);
+  pinMode (Motor1B, OUTPUT);
+  pinMode (Enable, OUTPUT);
+  pinMode (Interrupter, INPUT);
+  digitalWrite(Interrupter, HIGH);
+  
+  Serial.begin(9600);
+  Serial.println("Read");
+  Serial.println(digitalRead(3));
+  while (digitalRead(3) == HIGH) {
+    
+    Serial.println(digitalRead(3));
+    
+    digitalWrite(Enable, HIGH);
+    digitalWrite(Motor1A, HIGH);
+    digitalWrite(Motor1B, LOW);
+
+    delay(20);
+    digitalWrite(Motor1A, LOW);
+    digitalWrite(Motor1B, LOW);
+    digitalWrite(Enable, LOW);
+    delay(100);
+  }
+  //start = 1;
+  digitalWrite(Motor1A, LOW);
+  digitalWrite(Motor1B, LOW);
+  digitalWrite(Enable, LOW);
+  Serial.println("stopped");
+  Serial.println(digitalRead(3));
+  //start = 0;
+  
+  //Serial.print("First State: ");
+  //Serial.println(firstState);
+  //goHome();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+}
