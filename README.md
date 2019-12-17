@@ -1,5 +1,4 @@
 # So-Lo
-Senior Design Project
 So-Lo (Sound Locator) is a real-time automated video and audio recording system that can locate the direction that a person is speaking in a small to medium-sized room for the purpose of recording meetings. The device is a simple camera mounted on top of a motor. To locate the direction of the speaker, the device uses time delay of arrival. Essentially, three microphones are set up in a triangular array, one foot apart from each other, with the camera and motor in the epicenter. The device determines which angle the speaker is, relative to the camera, based on which microphone picks up the voice first, second, and third using a series of complex mathematical equations. 
 
 # Requirements
